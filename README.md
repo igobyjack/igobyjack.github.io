@@ -1,2 +1,1 @@
-# 3-body-web
-A repository for a 3-body problem simulation with draggable masses and trails
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
