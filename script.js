@@ -8,14 +8,52 @@ function resizeCanvas() {
 
 resizeCanvas();
 
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+
+// Increase these offsets to space the masses farther apart
+const offsetX = 200;
+const offsetY = 200;
+
+const masses = [
+    {
+        // green
+        x: centerX,
+        y: centerY - offsetY,
+        vx: -0.3,
+        vy: 0.1,
+        mass: 250,
+        trail: [],
+        color: '#228B22',
+        isDragging: false
+    },
+    {
+        // blue
+        x: centerX + offsetX,
+        y: centerY + offsetY,
+        vx: 0,
+        vy: -0.05,
+        mass: 250,
+        trail: [],
+        color: '#4682B4',
+        isDragging: false
+    },
+    {
+        // red
+        x: centerX - offsetX,
+        y: centerY + offsetY,
+        vx: 0.1,
+        vy: -0.1,
+        mass: 250,
+        trail: [],
+        color: '#CD5C5C',
+        isDragging: false
+    }
+];
+
 window.addEventListener('resize', resizeCanvas);
 
 const G = 0.3; 
-const masses = [
-    { x: 750, y: 300, vx: -0.3, vy: 0.1, mass: 250, trail: [], color: '#228B22', isDragging: false }, // Forest Green
-    { x: 1000, y: 600, vx: 0, vy: -0.1, mass: 250, trail: [], color: '#4682B4', isDragging: false }, // Soft Blue
-    { x: 600, y: 600, vx: 0.15, vy: -0.1, mass: 250, trail: [], color: '#CD5C5C', isDragging: false }  // Soft Red
-];
 
 const borderThreshold = 20;
 const trailResumeDelay = 1; 
