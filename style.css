@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #242424;
+    font-family: 'Lora', serif;
 }
 
 /* Hero section filling the full viewport */
@@ -49,6 +50,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    pointer-events: none;
 }
 
 #profile-pic {
@@ -66,18 +68,18 @@ body {
 #description {
     margin: 0 auto;
     max-width: 600px;       
-    text-align: center;     
     color: #fff;
     background-color: #242424;
     padding: 20px;
     min-height: 100vh;
+    pointer-events: none;
 }
 
 #description hr {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: 80vw;         /* Extend across the entire viewport width */
+    width: 30vw;         /* Extend across the entire viewport width */
     margin: 2em 0;        /* Vertical spacing (no auto margins) */
     border: none;
     border-top: 2px solid #ccc;

@@ -140,12 +140,9 @@ function updatePositions() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // First, draw the trails for all masses
     for (const mass of masses) {
-        ctx.beginPath();
-        ctx.arc(mass.x, mass.y, 30, 0, 2 * Math.PI);
-        ctx.fillStyle = mass.color;
-        ctx.fill();
-
         if (mass.trail.length > 0) {
             ctx.beginPath();
             ctx.moveTo(mass.trail[0].x, mass.trail[0].y);
@@ -162,6 +159,14 @@ function draw() {
             ctx.strokeStyle = mass.color;
             ctx.stroke();
         }
+    }
+    
+    // Then, draw the masses on top of the trails
+    for (const mass of masses) {
+        ctx.beginPath();
+        ctx.arc(mass.x, mass.y, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = mass.color;
+        ctx.fill();
     }
 }
 
