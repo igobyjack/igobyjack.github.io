@@ -11,7 +11,6 @@ resizeCanvas();
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
 
-// Increase these offsets to space the masses farther apart
 const offsetX = 200;
 const offsetY = 200;
 
@@ -141,7 +140,6 @@ function updatePositions() {
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // First, draw the trails for all masses
     for (const mass of masses) {
         if (mass.trail.length > 0) {
             ctx.beginPath();
@@ -161,7 +159,7 @@ function draw() {
         }
     }
     
-    // Then, draw the masses on top of the trails
+    // masses second, so they go on top of the trails
     for (const mass of masses) {
         ctx.beginPath();
         ctx.arc(mass.x, mass.y, 30, 0, 2 * Math.PI);
