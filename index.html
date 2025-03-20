@@ -6,6 +6,7 @@
     <title>igobyjack</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -17,17 +18,14 @@
     <div id="profile">
         <img src="assets/laserpfp.png" alt="Profile Picture" id="profile-pic">
         <h1 id="profile-name">Jack Chubick</h1>
+    </div>
 </section>
 <script src="threebody.js"></script>
-<section id="description">
-    <h1>Hello!</h1>
-    <hr> 
-    <p>
-        I'm Jack, and currently a senior in high school. 
-        I'm currently a researched in the Center of Autonomy at the University of Texas at Austin, where I work on a variety of projects related to applications of 
-        autonomous sytems, maths, physics, and computer science in aerospace engineering (my planned major).
-    </p>
-</section>
 
+<section id="description">
+    <div id="markdown-content">
+    </div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>

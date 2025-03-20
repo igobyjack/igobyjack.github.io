@@ -54,15 +54,15 @@ body {
 }
 
 #profile-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 60%;
 }
 
 #profile-name {
     color: #fff;
     font-size: 48px;
-    margin-top: -10px; 
+    margin-top: 10px; 
 }
 
 #description {
@@ -81,6 +81,28 @@ body {
     transform: translateX(-50%);
     width: 30vw;         /* Extend across the entire viewport width */
     margin: 2em 0;        /* Vertical spacing (no auto margins) */
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+/* Add to your style.css */
+#markdown-content {
+    color: #fff;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#markdown-content h1 {
+    margin-top: 0;
+}
+
+#markdown-content hr {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    margin: 3em 0;
     border: none;
     border-top: 2px solid #ccc;
 }

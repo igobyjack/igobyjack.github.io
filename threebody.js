@@ -159,7 +159,6 @@ function draw() {
         }
     }
     
-    // masses second, so they go on top of the trails
     for (const mass of masses) {
         ctx.beginPath();
         ctx.arc(mass.x, mass.y, 30, 0, 2 * Math.PI);
