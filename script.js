@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contentContainer = document.getElementById('markdown-content');
     
-    fetch('content.md')
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page') || 'content'; // Default to content.md if no page specified
+    
+    const mdFile = page + '.md';
+    
+    fetch(mdFile)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -9,7 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.text();
         })
         .then(markdown => {
-            contentContainer.innerHTML = marked.parse(markdown);
+            const cleanMarkdown = markdown.replace(/\/\/ filepath:.*$/m, '');
+            contentContainer.innerHTML = marked.parse(cleanMarkdown);
+            
+            if (page !== 'content') {
+                document.title = `${page.charAt(0).toUpperCase() + page.slice(1)} - igobyjack`;
+            }
         })
         .catch(error => {
             console.error('Error loading markdown content:', error);

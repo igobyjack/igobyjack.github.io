@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - igobyjack</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Home</a>
+        <h1>My Projects</h1>
+    </header>
+
+    <main>
+        <div id="projects-content"></div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentContainer = document.getElementById('projects-content');
+            
+            fetch('projects.md')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load projects content');
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    contentContainer.innerHTML = marked.parse(markdown);
+                })
+                .catch(error => {
+                    console.error('Error loading markdown content:', error);
+                    contentContainer.innerHTML = '<p>Error loading projects content. Please try again later.</p>';
+                });
+        });
+    </script>
+</body>
+</html>
